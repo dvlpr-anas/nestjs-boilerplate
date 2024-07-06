@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common'
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { UserModule } from './modules/user/user.module'
-import { AuthModule } from './modules/auth/auth.module'
-import { DatabaseModule } from './modules/database/database.module'
+import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
+import { ModulesModule } from './modules/modules.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @Module({
     imports: [
@@ -11,9 +11,9 @@ import configuration from './config/configuration';
             isGlobal: true,
             load: [configuration]
         }),
-        UserModule,
-        AuthModule,
-        DatabaseModule,
+        ModulesModule,
+        CoreModule,
+        SharedModule
     ],
     controllers: [],
     providers: []

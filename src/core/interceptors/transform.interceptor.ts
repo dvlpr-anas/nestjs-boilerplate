@@ -4,8 +4,8 @@ import {
     ExecutionContext,
     CallHandler,
 } from '@nestjs/common'
-import { Observable, throwError } from 'rxjs'
-import { catchError, map } from 'rxjs/operators'
+import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 export interface Response<T> {
     data: T
@@ -14,8 +14,7 @@ export interface Response<T> {
 
 @Injectable()
 export class TransformInterceptor<T>
-    implements NestInterceptor<T, Response<T>>
-{
+    implements NestInterceptor<T, Response<T>> {
     intercept(
         context: ExecutionContext,
         next: CallHandler,

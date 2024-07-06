@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { ValidationPipe } from '@nestjs/common'
-import { TransformInterceptor } from './interceptors/transform.interceptor'
+import { TransformInterceptor } from './core/interceptors/transform.interceptor'
 import helmet from 'helmet'
 import { SwaggerModule } from '@nestjs/swagger'
 import { swaggerConfig } from './config/swagger'

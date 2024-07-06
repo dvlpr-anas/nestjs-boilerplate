@@ -1,5 +1,7 @@
 import { DataSource } from 'typeorm'
 
+console.log(__dirname)
+
 export const databaseProviders = [
     {
         provide: 'DATA_SOURCE',
@@ -11,7 +13,7 @@ export const databaseProviders = [
                 username: 'root',
                 password: '',
                 database: 'nest_boilerplate',
-                entities: [__dirname + '/../entities/*.entity{.ts,.js}'],
+                entities: [__dirname + '/../modules/*/entities/*.entity{.ts,.js}'],
                 synchronize: true,
             })
 
