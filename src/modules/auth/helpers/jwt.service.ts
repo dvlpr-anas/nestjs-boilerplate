@@ -12,7 +12,7 @@ export class JwtServicee {
     async getAccessToken(data) {
         return await this.jwtService.signAsync(
             { data },
-            { secret: this.configService.get<string>('jwtSecret') }
+            { secret: this.configService.get<string>('JWT_SECRET') }
         )
     }
 }

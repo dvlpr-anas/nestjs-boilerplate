@@ -1,14 +1,14 @@
 import { Inject, Injectable } from '@nestjs/common'
-import { User } from 'src/entities/user.entity'
 import { Repository } from 'typeorm'
 import { SignupDto } from './dtos/Signup.dto'
+import { User } from '../user/entities/user.entity'
 
 @Injectable()
 export class AuthService {
     constructor(
         @Inject('USER_REPOSITORY')
         private userRepository: Repository<User>,
-    ) {}
+    ) { }
 
     signup(user: SignupDto): Promise<User> {
         return this.userRepository.save(user)

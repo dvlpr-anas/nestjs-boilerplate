@@ -12,12 +12,12 @@ import { SignupDto } from './dtos/Signup.dto'
 import { LoginDto } from './dtos/login.dto'
 import { RefreshTokenDto } from './dtos/refresh-token.dto'
 import { AuthService } from './auth.service'
-import { Public } from 'src/decorators/public.decorator'
-import { ConfigService } from '@nestjs/config'
-import { JwtService } from '@nestjs/jwt'
+import { Public } from 'src/core/decorators/public.decorator'
 import { BcryptService } from './helpers/bcrypt.service'
 import { JwtServicee } from './helpers/jwt.service'
+import { ApiTags } from '@nestjs/swagger'
 
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
     constructor(
