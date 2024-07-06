@@ -9,7 +9,7 @@ export class SignupDto {
     })
     @IsNotEmpty()
     @Length(3, 255)
-    firstName
+    firstName: string
 
     @ApiProperty({
         type: String,
@@ -19,7 +19,7 @@ export class SignupDto {
     })
     @IsOptional()
     @Length(3, 255)
-    lastName
+    lastName: string
 
     @ApiProperty({
         type: Number,
@@ -29,7 +29,7 @@ export class SignupDto {
     })
     @IsOptional()
     @Min(0)
-    age
+    age: number
 
     @ApiProperty({
         type: String,
@@ -38,7 +38,7 @@ export class SignupDto {
     })
     @IsNotEmpty()
     @Length(4, 20)
-    userName
+    userName: string
 
     @ApiProperty({
         type: String,
@@ -47,5 +47,5 @@ export class SignupDto {
     })
     @Length(4, 255)
     @IsNotEmpty()
-    password
+    password: string
 }

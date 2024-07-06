@@ -8,7 +8,7 @@ export class LoginDto {
         default: 'anas',
     })
     @IsNotEmpty()
-    userName
+    userName: string
 
     @ApiProperty({
         type: String,
@@ -16,5 +16,5 @@ export class LoginDto {
         default: '1234',
     })
     @IsNotEmpty()
-    password
+    password: string
 }
