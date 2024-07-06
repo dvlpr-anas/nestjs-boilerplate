@@ -11,30 +11,30 @@ import { BcryptService } from './helpers/bcrypt.service'
 import { JwtServicee } from './helpers/jwt.service'
 
 @Module({
-    imports: [
-        DatabaseModule,
-        JwtModule.registerAsync({
-            imports: [ConfigModule],
-            useFactory: async (configService: ConfigService) => {
-                return {
-                    secret: configService.get<string>('JWT_SECRET'),
-                    signOptions: { expiresIn: 3600 },
-                    global: true,
-                }
-            },
-            inject: [ConfigService],
-        }),
-    ],
-    providers: [
-        ...userProviders,
-        AuthService,
-        {
-            provide: APP_GUARD,
-            useClass: AuthGuard,
-        },
-        BcryptService,
-        JwtServicee,
-    ],
-    controllers: [AuthController],
+  imports: [
+    DatabaseModule,
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => {
+        return {
+          secret: configService.get<string>('JWT_SECRET'),
+          signOptions: { expiresIn: 3600 },
+          global: true
+        }
+      },
+      inject: [ConfigService]
+    })
+  ],
+  providers: [
+    ...userProviders,
+    AuthService,
+    {
+      provide: APP_GUARD,
+      useClass: AuthGuard
+    },
+    BcryptService,
+    JwtServicee
+  ],
+  controllers: [AuthController]
 })
 export class AuthModule {}

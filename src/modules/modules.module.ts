@@ -3,8 +3,8 @@ import { UserModule } from './user/user.module'
 import { AuthModule } from './auth/auth.module'
 
 @Module({
-    imports: [AuthModule, UserModule],
-    controllers: [],
-    providers: [],
+  imports: [AuthModule, UserModule],
+  controllers: [],
+  providers: []
 })
 export class ModulesModule {}

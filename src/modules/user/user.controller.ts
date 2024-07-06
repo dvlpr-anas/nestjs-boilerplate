@@ -4,8 +4,8 @@ import { ApiTags } from '@nestjs/swagger'
 @ApiTags('User')
 @Controller('user')
 export class UserController {
-    @Put()
-    updateUser() {
-        return 'update user works'
-    }
+  @Put()
+  updateUser() {
+    return 'update user works'
+  }
 }

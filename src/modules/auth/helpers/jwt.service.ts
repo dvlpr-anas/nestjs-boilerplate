@@ -5,15 +5,12 @@ import { User } from 'src/modules/user/entities/user.entity'
 
 @Injectable()
 export class JwtServicee {
-    constructor(
-        private jwtService: JwtService,
-        private configService: ConfigService,
-    ) { }
+  constructor(private jwtService: JwtService, private configService: ConfigService) {}
 
-    async getAccessToken(data: User) {
-        return await this.jwtService.signAsync(
-            { data },
-            { secret: this.configService.get<string>('JWT_SECRET') },
-        )
-    }
+  async getAccessToken(data: User) {
+    return await this.jwtService.signAsync(
+      { data },
+      { secret: this.configService.get<string>('JWT_SECRET') }
+    )
+  }
 }

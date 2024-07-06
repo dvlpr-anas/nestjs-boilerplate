@@ -5,8 +5,8 @@ import { userProviders } from './user.providers'
 import { DatabaseModule } from '../../shared/modules/database/database.module'
 
 @Module({
-    imports: [DatabaseModule],
-    controllers: [UserController],
-    providers: [...userProviders, UserService],
+  imports: [DatabaseModule],
+  controllers: [UserController],
+  providers: [...userProviders, UserService]
 })
 export class UserModule {}
