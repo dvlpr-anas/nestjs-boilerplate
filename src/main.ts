@@ -10,7 +10,7 @@ import { ConfigService } from '@nestjs/config'
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule, { cors: true })
 
-  const a = "asdfasd"
+  const a: any = 'asdf'
 
   app.use(helmet())
 
