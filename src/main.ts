@@ -19,7 +19,7 @@ const bootstrap = async () => {
     app.useGlobalInterceptors(new TransformInterceptor())
 
     const document = SwaggerModule.createDocument(app, swaggerConfig)
-    SwaggerModule.setup('docs', app, document)
+    SwaggerModule.setup('api/v1/docs', app, document)
 
     const configService = app.get(ConfigService)
     await app.listen(configService.get<number>('APP_PORT') || 3000)
