@@ -10,6 +10,8 @@ import { ConfigService } from '@nestjs/config'
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule, { cors: true })
 
+  const a = "asdfasd"
+
   app.use(helmet())
 
   app.setGlobalPrefix('api/v1')
