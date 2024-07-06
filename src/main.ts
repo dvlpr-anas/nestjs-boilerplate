@@ -5,6 +5,7 @@ import { TransformInterceptor } from './core/interceptors/transform.interceptor'
 import helmet from 'helmet'
 import { SwaggerModule } from '@nestjs/swagger'
 import { swaggerConfig } from './config/swagger'
+import { ConfigService } from '@nestjs/config'
 
 const bootstrap = async () => {
     const app = await NestFactory.create(AppModule, { cors: true })
@@ -20,7 +21,8 @@ const bootstrap = async () => {
     const document = SwaggerModule.createDocument(app, swaggerConfig)
     SwaggerModule.setup('swagger', app, document)
 
-    await app.listen(process.env.PORT || 3000)
+    const configService = app.get(ConfigService)
+    await app.listen(configService.get<number>('APP_PORT') || 3000)
 }
 
 bootstrap()

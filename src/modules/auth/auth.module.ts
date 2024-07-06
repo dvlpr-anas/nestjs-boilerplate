@@ -17,7 +17,7 @@ import { JwtServicee } from './helpers/jwt.service';
             imports: [ConfigModule],
             useFactory: async (configService: ConfigService) => {
                 return {
-                    secretOrPrivateKey: configService.get<any>('global').jwtSecret,
+                    secret: configService.get<string>('JWT_SECRET'),
                     signOptions: { expiresIn: 3600 },
                     global: true
                 }
