@@ -7,8 +7,8 @@ import { AuthGuard } from '../../core/guards/auth.guard'
 import { JwtModule } from '@nestjs/jwt'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { APP_GUARD } from '@nestjs/core'
-import { BcryptService } from './helpers/bcrypt.service';
-import { JwtServicee } from './helpers/jwt.service';
+import { BcryptService } from './helpers/bcrypt.service'
+import { JwtServicee } from './helpers/jwt.service'
 
 @Module({
     imports: [
@@ -19,10 +19,10 @@ import { JwtServicee } from './helpers/jwt.service';
                 return {
                     secret: configService.get<string>('JWT_SECRET'),
                     signOptions: { expiresIn: 3600 },
-                    global: true
+                    global: true,
                 }
             },
-            inject: [ConfigService]
+            inject: [ConfigService],
         }),
     ],
     providers: [
@@ -33,8 +33,8 @@ import { JwtServicee } from './helpers/jwt.service';
             useClass: AuthGuard,
         },
         BcryptService,
-        JwtServicee
+        JwtServicee,
     ],
     controllers: [AuthController],
 })
-export class AuthModule { }
+export class AuthModule {}

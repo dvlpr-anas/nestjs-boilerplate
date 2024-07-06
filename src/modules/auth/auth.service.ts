@@ -8,7 +8,7 @@ export class AuthService {
     constructor(
         @Inject('USER_REPOSITORY')
         private userRepository: Repository<User>,
-    ) { }
+    ) {}
 
     signup(user: SignupDto): Promise<User> {
         return this.userRepository.save(user)

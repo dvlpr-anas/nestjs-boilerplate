@@ -15,7 +15,7 @@ export class SignupDto {
         type: String,
         description: 'Last Name',
         default: 'Shaikh',
-        required: false
+        required: false,
     })
     @IsOptional()
     @Length(3, 255)
@@ -25,7 +25,7 @@ export class SignupDto {
         type: Number,
         description: 'Age',
         default: 27,
-        required: false
+        required: false,
     })
     @IsOptional()
     @Min(0)

@@ -23,8 +23,8 @@ export class AuthController {
     constructor(
         private authService: AuthService,
         private bcryptService: BcryptService,
-        private jwtService: JwtServicee
-    ) { }
+        private jwtService: JwtServicee,
+    ) {}
 
     @Public()
     @Post('signup')

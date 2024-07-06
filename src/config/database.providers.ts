@@ -14,7 +14,9 @@ export const databaseProviders = [
                 username: configService.get<string>('DB_USERNAME'),
                 password: configService.get<string>('DB_PASSWORD'),
                 database: configService.get<string>('DB_DATABASE'),
-                entities: [__dirname + '/../modules/*/entities/*.entity{.ts,.js}'],
+                entities: [
+                    __dirname + '/../modules/*/entities/*.entity{.ts,.js}',
+                ],
                 synchronize: configService.get<boolean>('DB_SYNCHRONIZE'),
             })
 

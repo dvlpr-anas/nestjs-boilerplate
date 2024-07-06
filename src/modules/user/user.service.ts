@@ -7,7 +7,7 @@ export class UserService {
     constructor(
         @Inject('USER_REPOSITORY')
         private userRepository: Repository<User>,
-    ) { }
+    ) {}
 
     async findAll() {
         return this.userRepository.find()

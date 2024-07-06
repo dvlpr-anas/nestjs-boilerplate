@@ -9,4 +9,4 @@ import { DatabaseModule } from '../../shared/modules/database/database.module'
     controllers: [UserController],
     providers: [...userProviders, UserService],
 })
-export class UserModule { }
+export class UserModule {}
