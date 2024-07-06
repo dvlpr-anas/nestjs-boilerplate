@@ -1,10 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column } from 'typeorm'
+import { BaseEntity } from 'src/shared/entities/base.entity'
 
 @Entity('users')
-export class User {
-    @PrimaryGeneratedColumn()
-    id: number
-
+export class User extends BaseEntity {
     @Column({ length: 255 })
     firstName: string
 
@@ -19,18 +17,4 @@ export class User {
 
     @Column({ length: 255, select: false })
     password: string
-
-    @Column({
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP',
-        select: false,
-    })
-    createdAt!: string
-
-    @Column({
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP',
-        select: false,
-    })
-    updatedAt!: string
 }
